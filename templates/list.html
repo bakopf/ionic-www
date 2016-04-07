@@ -1,0 +1,63 @@
+<ion-view view-title="Team">
+
+  <ion-nav-buttons side="primary">
+    <button class="button button-icon ion-ios-minus-outline" ng-click="toggleDelete()"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="secondary">
+    <button class="button button-icon ion-navicon" ng-click="toggleReorder()"></button>
+  </ion-nav-buttons>
+
+
+  <div class="bar bar-subheader item-input-inset">
+    <label class="item-input-wrapper">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input type="search" ng-model="searchstring" placeholder="suche">
+    </label>
+  </div>
+
+  <ion-content class="has-subheader">
+
+    <ion-refresher
+      pulling-text="Ziehe zum aktualisieren ..."
+      on-refresh="doRefresh()">
+    </ion-refresher>
+
+
+    <ion-list
+      show-delete="enableDelete"
+      show-reorder="enableReorder"
+    >
+      <ion-item class="item-avatar"
+                ng-repeat="person in data | filter : searchstring "
+                ng-class="{'fav':person.fav}"
+                href="#/tabs/list/{{person.id}}"
+                ng-if="person.youtube !== ''"
+      >
+        <!--<img src="http://placehold.it/100x100" >-->
+        <img ng-src="{{::person.pic}}">
+        <h2 ng-bind-html="::person.title"></h2>
+
+        <h3 ng-bind-html="::person.short | uppercase"></h3>
+        <div ng-bind-html="::person.short">asd</div>
+        <div ng-bind-html="::person.long"></div>
+        <ion-option-button class="button button-positive ion-android-mail button-large"
+                           ng-click="mailTo (person)"></ion-option-button>
+
+        <ion-option-button class="button button-calm ion-android-phone-portrait button-large"
+                           ng-click="call (person)"></ion-option-button>
+
+        <ion-option-button class="button button-balanced ion-star button-large"
+                           ng-click="toggleFav (person)"></ion-option-button>
+
+
+        <ion-delete-button class="ion-minus-circled"
+                           ng-click="deleteItem ($index )"
+        "></ion-delete-button>
+        <ion-reorder-button class="ion-navicon"
+                            on-reorder="moveItem (person, $fromIndex, $toIndex) "></ion-reorder-button>
+      </ion-item>
+    </ion-list>
+
+
+  </ion-content>
+</ion-view>

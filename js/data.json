@@ -1,0 +1,18 @@
+[
+    {
+        "id": "us",
+        "title": "<strong>Ba Ba Ba </strong>",
+        "pic": "http://placehold.it/350x350",
+        "short": "<text class='POS'>Dingers</text>",
+        "long": "qwkjasldaslkjda <video width='400' controls><source src='img/movie.mp4' type='video/mp4'></video>aslkdjalks djklasdj <img src='http://placehold.it/350x350'/>lkasjd a aslkjdklas jd",
+        "frame": "<iframe ng-src='http://www.youtube.com/embed/j5QOgCpwOU0'></iframe>",
+        "frameurl" : "http://www.youtube.com/embed/j5QOgCpwOU0"
+    },
+    {
+        "id": "fd",
+        "title": "TITLE2",
+        "pic": "http://placehold.it/350x350",
+        "short": "Dev/CEO",
+        "long": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi atque consequatur debitis dicta dolorum ea eligendi exercitationem impedit labore laborum minus mollitia nulla possimus reprehenderit sapiente sed, voluptates. Facere, incidunt."
+    }
+  ]

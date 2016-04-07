@@ -1,0 +1,25 @@
+<ion-view view-title="Details">
+
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="person in data | filter : { 'id' : selectedID}"
+          class="item-body item-thumbnail-right">
+        <img ng-src="{{::person.pic}}">
+        <h2 ng-bind-html="::person.title"></h2>
+        <h3 ng-bind-html="::person.short | uppercase"></h3>
+        <p ng-bind-html="::person.long"></p>
+        <div ng-bind-html="::person.frame"></div>
+        <iframe ng-src="{{::person.frameurl}}"></iframe>
+        <div class="button-bar">
+          <button class="button button-positive button-outline icon-right ion-android-mail"
+                             ng-click="mailTo (person)">Mail</button>
+          <button class="button button-positive button-outline icon-right ion-android-phone-portrait"
+                             ng-click="call (person)">Anrufen </button>
+        </div>
+
+
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>
